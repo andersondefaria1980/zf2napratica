@@ -18,7 +18,7 @@ class Bootstrap
     static public function go()
     {
         //@todo verificar se não existe uma constante indicando o diretório raiz do projeto
-        chdir(dirname(__DIR__ . '/../../../module/Application'));
+        chdir(dirname(__DIR__ . '/../../../../'));
 
         include 'init_autoloader.php';
 
