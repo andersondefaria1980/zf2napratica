@@ -1,0 +1,27 @@
+IndexController
+ [x]  404
+ [x] Index action
+ [x] Index action paginator
+ [x] With out id post action
+ [x] Invalid id post action
+ [x] Post action
+
+Application\Model\Comment
+ [x] Get input filter
+ [x] Input filter valid
+ [x] Input filter invalido
+ [x] Insert
+ [x] Insert invalido
+ [x] Update
+ [x] Update invalido
+ [x] Delete
+
+Application\Model\Post
+ [x] Get input filter
+ [x] Input filter valid
+ [x] Input filter invalido
+ [x] Insert
+ [x] Insert invalido
+ [x] Update
+ [x] Delete
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Application Test Suite" tests="21" assertions="63" failures="0" errors="0" time="24.196979">
+    <testsuite name="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Controller/IndexControllerTest.php" tests="6" assertions="24" failures="0" errors="0" time="14.420198">
+      <testcase name="test404" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="32" assertions="1" time="2.341180"/>
+      <testcase name="testIndexAction" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="43" assertions="5" time="2.488041"/>
+      <testcase name="testIndexActionPaginator" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="74" assertions="8" time="4.029375"/>
+      <testcase name="testWithOutIdPostAction" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="120" assertions="2" time="1.264198"/>
+      <testcase name="testInvalidIdPostAction" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="132" assertions="2" time="2.508724"/>
+      <testcase name="testPostAction" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Controller/IndexControllerTest.php" line="143" assertions="6" time="1.788680"/>
+    </testsuite>
+    <testsuite name="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" tests="8" assertions="22" failures="0" errors="0" time="6.060623">
+      <testcase name="testGetInputFilter" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="14" assertions="1" time="1.100749"/>
+      <testcase name="testInputFilterValid" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="26" assertions="8" time="0.459485"/>
+      <testcase name="testInputFilterInvalido" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="43" assertions="2" time="0.501109"/>
+      <testcase name="testInsert" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="53" assertions="2" time="0.650489"/>
+      <testcase name="testInsertInvalido" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="68" assertions="1" time="0.590268"/>
+      <testcase name="testUpdate" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="77" assertions="3" time="1.113869"/>
+      <testcase name="testUpdateInvalido" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="102" assertions="2" time="0.943900"/>
+      <testcase name="testDelete" class="Application\Model\CommentTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/CommentTest.php" line="119" assertions="3" time="0.700754"/>
+    </testsuite>
+    <testsuite name="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" tests="7" assertions="17" failures="0" errors="0" time="3.716158">
+      <testcase name="testGetInputFilter" class="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" line="13" assertions="1" time="0.466367"/>
+      <testcase name="testInputFilterValid" class="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" line="25" assertions="5" time="0.422993"/>
+      <testcase name="testInputFilterInvalido" class="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" line="39" assertions="1" time="0.536587"/>
+      <testcase name="testInsert" class="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" line="52" assertions="2" time="0.487622"/>
+      <testcase name="testInsertInvalido" class="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" line="68" assertions="2" time="0.479453"/>
+      <testcase name="testUpdate" class="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" line="77" assertions="3" time="0.784149"/>
+      <testcase name="testDelete" class="Application\Model\PostTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Application/tests/src/Application/Model/PostTest.php" line="101" assertions="3" time="0.538987"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

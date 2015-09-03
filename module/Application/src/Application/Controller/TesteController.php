@@ -13,7 +13,7 @@ use Zend\Paginator\Adapter\DbSelect as PaginatorDbSelectAdapter;
  * @package Controller
  * @author  Elton Minetto <eminetto@coderockr.com>
  */
-class IndexController extends ActionController
+class TesteController extends ActionController
 {
     /**
      * Mostra os posts cadastrados
@@ -28,7 +28,6 @@ class IndexController extends ActionController
         $paginatorAdapter = new PaginatorDbSelectAdapter($select, $sql);
         $paginator = new Paginator($paginatorAdapter);
         $paginator->setCurrentPageNumber($this->params()->fromRoute('page'));
-        $paginator->setItemCountPerPage(10);
 
         return new ViewModel(array(
             'posts' => $paginator
