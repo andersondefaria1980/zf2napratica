@@ -1,0 +1,10 @@
+Admin\Model\User
+ [x] Get input filter
+ [x] Input filter valid
+ [x] Input filter invalido username
+ [x] Input filter invalido role
+ [x] Insert
+ [x] Insert invalido
+ [x] Update
+ [x] Delete
+

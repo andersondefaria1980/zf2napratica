@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Admin Test Suite" tests="8" assertions="20" failures="0" errors="0" time="5.963182">
+    <testsuite name="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" tests="8" assertions="20" failures="0" errors="0" time="5.963182">
+      <testcase name="testGetInputFilter" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="13" assertions="1" time="0.650611"/>
+      <testcase name="testInputFilterValid" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="25" assertions="7" time="0.616018"/>
+      <testcase name="testInputFilterInvalidoUsername" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="41" assertions="1" time="0.743286"/>
+      <testcase name="testInputFilterInvalidoRole" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="54" assertions="1" time="0.698794"/>
+      <testcase name="testInsert" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="67" assertions="2" time="0.736963"/>
+      <testcase name="testInsertInvalido" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="81" assertions="2" time="0.723622"/>
+      <testcase name="testUpdate" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="90" assertions="3" time="1.074384"/>
+      <testcase name="testDelete" class="Admin\Model\UserTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Model/UserTest.php" line="113" assertions="3" time="0.719505"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
