@@ -1,10 +1,8 @@
-Admin\Model\User
- [x] Get input filter
- [x] Input filter valid
- [x] Input filter invalido username
- [x] Input filter invalido role
- [x] Insert
- [x] Insert invalido
- [x] Update
- [x] Delete
+Admin\Service\Auth
+ [x] Authenticate without params
+ [x] Authenticate empty params
+ [x] Authenticate invalid parameters
+ [x] Authenticate invalid passord
+ [x] Authenticate valid params
+ [x] Logout
 

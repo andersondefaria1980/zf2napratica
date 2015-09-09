@@ -60,4 +60,17 @@ return array(
     //         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     //     )
     // )
+    
+
+    'service_manager' => array(
+        'factories' => array(
+            'Session' => function($sm) {
+                return new Zend\Session\Container('ZF2napratica');
+            },
+            'Admin\Service\Auth' => function($sm) {
+                $dbAdapter = $sm->get('DbAdapter');
+                return new Admin\Service\Auth($dbAdapter);
+            },
+        )    
+    )
 );
