@@ -1,16 +1,9 @@
-AuthController
- [x]  404
- [x] Index action login form
- [x] Login invalid method
- [x] Login
+Admin\Service\Auth
+ [x] Authenticate without params
+ [x] Authenticate empty params
+ [x] Authenticate invalid parameters
+ [x] Authenticate invalid passord
+ [x] Authenticate valid params
  [x] Logout
-
-IndexController
- [x]  404
- [x] Save action new request
- [x] Save action update form request
- [x] Save action post request
- [x] Save action invalid post request
- [x] Invalid delete action
- [x] Delete action
+ [x] Authorize
 

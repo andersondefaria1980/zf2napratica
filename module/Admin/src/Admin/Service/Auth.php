@@ -78,4 +78,17 @@ class Auth extends Service
         return true;
     }
 
+   /**
+    * Faz a autorização do usuário para acessar o recurso
+    * @return boolean
+    */
+   public function authorize()
+   {
+       
+       $auth = new AuthenticationService();
+       if ($auth->hasIdentity()) {
+           return true;
+       }
+       return false;
+   }
 }

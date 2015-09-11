@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Admin Test Suite" tests="12" assertions="38" failures="0" errors="0" time="12.974185">
-    <testsuite name="AuthControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/AuthControllerTest.php" tests="5" assertions="15" failures="0" errors="0" time="5.357050">
-      <testcase name="test404" class="AuthControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/AuthControllerTest.php" line="29" assertions="1" time="1.226403"/>
-      <testcase name="testIndexActionLoginForm" class="AuthControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/AuthControllerTest.php" line="37" assertions="8" time="0.835098"/>
-      <testcase name="testLoginInvalidMethod" class="AuthControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/AuthControllerTest.php" line="72" assertions="2" time="1.219000"/>
-      <testcase name="testLogin" class="AuthControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/AuthControllerTest.php" line="81" assertions="2" time="1.088340"/>
-      <testcase name="testLogout" class="AuthControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/AuthControllerTest.php" line="101" assertions="2" time="0.988209"/>
-    </testsuite>
-    <testsuite name="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" tests="7" assertions="23" failures="0" errors="0" time="7.617135">
-      <testcase name="test404" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" line="31" assertions="1" time="0.792392"/>
-      <testcase name="testSaveActionNewRequest" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" line="43" assertions="5" time="0.882928"/>
-      <testcase name="testSaveActionUpdateFormRequest" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" line="69" assertions="6" time="1.091663"/>
-      <testcase name="testSaveActionPostRequest" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" line="103" assertions="4" time="1.417799"/>
-      <testcase name="testSaveActionInvalidPostRequest" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" line="131" assertions="3" time="1.418995"/>
-      <testcase name="testInvalidDeleteAction" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" line="162" assertions="2" time="1.023829"/>
-      <testcase name="testDeleteAction" class="IndexControllerTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Controller/IndexControllerTest.php" line="177" assertions="2" time="0.989529"/>
+  <testsuite name="Admin Test Suite" tests="7" assertions="17" failures="0" errors="0" time="4.989199">
+    <testsuite name="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" tests="7" assertions="17" failures="0" errors="0" time="4.989199">
+      <testcase name="testAuthenticateWithoutParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="28" assertions="1" time="0.595172"/>
+      <testcase name="testAuthenticateEmptyParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="41" assertions="2" time="0.610420"/>
+      <testcase name="testAuthenticateInvalidParameters" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="54" assertions="2" time="0.664814"/>
+      <testcase name="testAuthenticateInvalidPassord" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="67" assertions="2" time="0.792702"/>
+      <testcase name="testAuthenticateValidParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="79" assertions="3" time="0.806194"/>
+      <testcase name="testLogout" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="115" assertions="4" time="0.745698"/>
+      <testcase name="testAuthorize" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="156" assertions="3" time="0.774199"/>
     </testsuite>
   </testsuite>
 </testsuites>
