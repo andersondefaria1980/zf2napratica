@@ -1,4 +1,5 @@
 <?php
+
 namespace Admin\Service;
 
 use DateTime;
@@ -17,20 +18,18 @@ use Zend\Authentication\AuthenticationService;
 /**
  * @group Service
  */
-class AuthTest extends ServiceTestCase
-{
+class AuthTest extends ServiceTestCase {
 
     /**
      * Authenticação sem parâmetros
      * @expectedException \Exception
      * @return void
      */
-    public function testAuthenticateWithoutParams()
-    {
+    public function testAuthenticateWithoutParams() {
         $authService = $this->serviceManager->get('Admin\Service\Auth');
 
         $authService->authenticate();
-     }
+    }
 
     /**
      * Authenticação sem parâmetros
@@ -38,12 +37,11 @@ class AuthTest extends ServiceTestCase
      * @expectedExceptionMessage Parâmetros inválidos
      * @return void
      */
-    public function testAuthenticateEmptyParams()
-    {
+    public function testAuthenticateEmptyParams() {
         $authService = $this->serviceManager->get('Admin\Service\Auth');
 
         $authService->authenticate(array());
-     }
+    }
 
     /**
      * Teste da autenticação inválida
@@ -51,8 +49,7 @@ class AuthTest extends ServiceTestCase
      * @expectedExceptionMessage Login ou senha inválidos
      * @return void
      */
-    public function testAuthenticateInvalidParameters()
-    {
+    public function testAuthenticateInvalidParameters() {
         $authService = $this->serviceManager->get('Admin\Service\Auth');
 
         $authService->authenticate(array('username' => 'invalid', 'password' => 'invalid'));
@@ -64,8 +61,7 @@ class AuthTest extends ServiceTestCase
      * @expectedExceptionMessage Login ou senha inválidos
      * @return void
      */
-    public function testAuthenticateInvalidPassord()
-    {
+    public function testAuthenticateInvalidPassord() {
         $authService = $this->serviceManager->get('Admin\Service\Auth');
         $user = $this->addUser();
 
@@ -76,13 +72,12 @@ class AuthTest extends ServiceTestCase
      * Teste da autenticação Válida
      * @return void
      */
-    public function testAuthenticateValidParams()
-    {
+    public function testAuthenticateValidParams() {
         $authService = $this->serviceManager->get('Admin\Service\Auth');
         $user = $this->addUser();
-        
+
         $result = $authService->authenticate(
-            array('username' => $user->username, 'password' => 'apple')
+                array('username' => $user->username, 'password' => 'apple')
         );
         $this->assertTrue($result);
 
@@ -94,15 +89,13 @@ class AuthTest extends ServiceTestCase
         $session = $this->serviceManager->get('Session');
         $savedUser = $session->offsetGet('user');
         $this->assertEquals($user->id, $savedUser->id);
-
     }
 
     /**
      * Limpa a autenticação depois de cada teste
      * @return void
      */
-    public function tearDown()
-    {
+    public function tearDown() {
         parent::tearDown();
         $auth = new AuthenticationService();
         $auth->clearIdentity();
@@ -112,19 +105,18 @@ class AuthTest extends ServiceTestCase
      * Teste do logout
      * @return void
      */
-    public function testLogout()
-    {
+    public function testLogout() {
         $authService = $this->serviceManager->get('Admin\Service\Auth');
         $user = $this->addUser();
-        
+
         $result = $authService->authenticate(
-            array('username' => $user->username, 'password' => 'apple')
+                array('username' => $user->username, 'password' => 'apple')
         );
         $this->assertTrue($result);
 
         $result = $authService->logout();
         $this->assertTrue($result);
-        
+
         //verifica se removeu a identidade da autenticação
         $auth = new AuthenticationService();
         $this->assertNull($auth->getIdentity());
@@ -135,9 +127,7 @@ class AuthTest extends ServiceTestCase
         $this->assertNull($savedUser);
     }
 
-  
-    private function addUser()
-    {
+    private function addUser() {
         $user = new User();
         $user->username = 'steve';
         $user->password = md5('apple');
@@ -148,27 +138,82 @@ class AuthTest extends ServiceTestCase
         $saved = $this->getTable('Admin\Model\User')->save($user);
         return $saved;
     }
-    
+
     /**
-    * Teste da autorização
-    * @return void
-    */
-   public function testAuthorize()
-   {
-       $authService = $this->getService('Admin\Service\Auth');
+     * Teste da autorização
+     * @return void
+     */
+//   public function testAuthorize()
+//   {
+//       $authService = $this->getService('Admin\Service\Auth');
+//
+//       $result = $authService->authorize();
+//       $this->assertFalse($result);
+//
+//       $user = $this->addUser();
+//
+//       $result = $authService->authenticate(
+//           array('username' => $user->username, 'password' => 'apple')
+//       );
+//       $this->assertTrue($result);
+//
+//       $result = $authService->authorize();
+//       $this->assertTrue($result);
+//   }
 
-       $result = $authService->authorize();
-       $this->assertFalse($result);
-
-       $user = $this->addUser();
-
-       $result = $authService->authenticate(
-           array('username' => $user->username, 'password' => 'apple')
-       );
-       $this->assertTrue($result);
-
-       $result = $authService->authorize();
-       $this->assertTrue($result);
-   }
+    public function testAutorize() 
+    {
+        $authService = $this->getService('Admin\Service\Auth');
+        
+        $admin = $this->addUser();
+        
+        //adiciona visitante
+        $visitante = new User();
+        $visitante->username = 'bill';
+        $visitante->password = md5('teste');
+        $visitante->name = 'Bill Gates';
+        $visitante->valid = 1;
+        $visitante->role = 'visitante';
+        
+        $saved = $this->getTable('Admin\Model\User')->save($visitante);
+        
+        $config = $this->serviceManager->get('Config');
+        $config['acl']['roles']['visitante'] = null;
+        $config['acl']['roles']['admin']     = 'visitante';
+        
+        $config['acl']['resources'] = array(
+            'Application\Controller\Index.index',
+            'Admin\Controller\Index.save',
+        );
+        
+        $config['acl']['privilege']['visitante']['allow'] = array('Application\Controller\Index.index');
+        $config['acl']['privilege']['admin']['allow'] = array('Admin\Controller\Index.save');
+        
+        //atualiza a configuracao
+        $this->serviceManager->setService('Config',$config);
+        
+        //autentica com o visitante
+        $result = $authService->authenticate(
+                array('username'=>$visitante->username ,'password' => 'teste')
+        );
+        
+        $result = $authService->authorize('application', 'Application\Controller\Index','index');
+        $this->assertTrue($result);
+        $result = $authService->authorize('application', 'Admin\Controller\Index', 'save');
+        $this->assertFalse($result);
+        
+        
+        //autentica com o admin
+        $result = $authService->authenticate(
+                array('username'=>$admin->username ,'password' => 'apple')
+        );
+        
+        $result = $authService->authorize('application', 'Application\Controller\Index', 'index');
+        $this->assertTrue($result);
+        $result = $authService->authorize('application', 'Admin\Controller\Index', 'save');
+        $this->assertTrue($result);
+        
+        
+    }
 
 }

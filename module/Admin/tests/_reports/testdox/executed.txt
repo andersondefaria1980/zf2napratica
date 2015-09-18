@@ -5,5 +5,5 @@ Admin\Service\Auth
  [x] Authenticate invalid passord
  [x] Authenticate valid params
  [x] Logout
- [x] Authorize
+ [x] Autorize
 

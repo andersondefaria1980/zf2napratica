@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Admin Test Suite" tests="7" assertions="17" failures="0" errors="0" time="4.989199">
-    <testsuite name="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" tests="7" assertions="17" failures="0" errors="0" time="4.989199">
-      <testcase name="testAuthenticateWithoutParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="28" assertions="1" time="0.595172"/>
-      <testcase name="testAuthenticateEmptyParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="41" assertions="2" time="0.610420"/>
-      <testcase name="testAuthenticateInvalidParameters" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="54" assertions="2" time="0.664814"/>
-      <testcase name="testAuthenticateInvalidPassord" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="67" assertions="2" time="0.792702"/>
-      <testcase name="testAuthenticateValidParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="79" assertions="3" time="0.806194"/>
-      <testcase name="testLogout" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="115" assertions="4" time="0.745698"/>
-      <testcase name="testAuthorize" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="156" assertions="3" time="0.774199"/>
+  <testsuite name="Admin Test Suite" tests="7" assertions="18" failures="0" errors="0" time="5.453385">
+    <testsuite name="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" tests="7" assertions="18" failures="0" errors="0" time="5.453385">
+      <testcase name="testAuthenticateWithoutParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="28" assertions="1" time="0.903012"/>
+      <testcase name="testAuthenticateEmptyParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="40" assertions="2" time="0.531113"/>
+      <testcase name="testAuthenticateInvalidParameters" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="52" assertions="2" time="0.595907"/>
+      <testcase name="testAuthenticateInvalidPassord" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="64" assertions="2" time="0.806422"/>
+      <testcase name="testAuthenticateValidParams" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="75" assertions="3" time="0.915741"/>
+      <testcase name="testLogout" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="108" assertions="4" time="0.697778"/>
+      <testcase name="testAutorize" class="Admin\Service\AuthTest" file="/Users/andersondefaria/NetBeansProjects/zf2napratica/module/Admin/tests/src/Admin/Service/AuthTest.php" line="164" assertions="4" time="1.003412"/>
     </testsuite>
   </testsuite>
 </testsuites>
