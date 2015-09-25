@@ -21,12 +21,18 @@ class IndexController extends ActionController
      */
     public function indexAction()
     {
+        
         $post = $this->getTable('Application\Model\Post');
         $sql = $post->getSql();
         $select = $sql->select();
 
         $paginatorAdapter = new PaginatorDbSelectAdapter($select, $sql);
         $paginator = new Paginator($paginatorAdapter);
+        
+        $cache = $this->getServiceLocator()->get('Cache');
+        $cache = $this->getService('Cache');
+        $paginator->setCache($cache);
+        
         $paginator->setCurrentPageNumber($this->params()->fromRoute('page'));
         $paginator->setItemCountPerPage(10);
 

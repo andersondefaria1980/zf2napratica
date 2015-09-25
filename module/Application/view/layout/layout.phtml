@@ -29,12 +29,27 @@
                     <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
+                           <ul class="nav">
+                                <li class="active"><a href="/"><?php echo $this->translate('Home') ?></a></li>
+                                <li>
+                                    <?php $user = $this->session()->offsetGet('user'); ?>
+                                    <?php if ($user): ?>
+                                        <a href="/admin/auth/logout"><?php echo $this->translate('Logout') ?></a>
+                                    <?php else: ?>
+                                        <a href="/admin/auth/index"><?php echo $this->translate('Login') ?></a>
+                                    <?php endif;?>
+
+                                </li>
+                                <li><a href="#"><?php echo ($user)? $user->username : '';?></a></li>
+                            </ul>
                         </ul>
                     </div><!--/.nav-collapse -->
+                    
                 </div>
             </div>
         </div>
+        
+        <?php echo $this->cachedPartial('partials/menu.phtml'); ?>
         <div class="container">
             <?php echo $this->content; ?>
             <hr>
