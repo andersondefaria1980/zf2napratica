@@ -6,6 +6,11 @@ use Core\Controller\ActionController;
 use Zend\Paginator\Paginator;
 use Zend\Paginator\Adapter\DbSelect as PaginatorDbSelectAdapter;
 
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+
 /**
  * Controlador que gerencia os posts
  * 
@@ -59,4 +64,56 @@ class IndexController extends ActionController
             'post' => $post
         ));
     }
+    
+    
+    /**
+    * Retorna os comentários de um post
+    * @return Zend\Http\Response 
+    */
+   /* public function commentsAction()
+    {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        $where = array('post_id' => $id);
+        $comments = $this->getTable('Application\Model\Comment')
+                         ->fetchAll(null, $where)
+                         ->toArray();
+
+        $serializer = new Serializer(
+                                    array(new GetSetMethodNormalizer()),
+                                    array('xml' => new XmlEncoder(),
+                                          'json' => new JsonEncoder)
+                );
+        $format = $this->params()->fromRoute('format', 'json');
+        
+        $content = $serializer->serialize($comments, $format);
+
+                
+        $response = $this->getResponse();
+        $response->setStatusCode(200);
+        $response->setContent($content);
+        $response->getHeaders()->addHeaderLine('Content-Type', 'application/'. $format);
+        
+        return $response;
+    }
+    */
+    
+    
+    /**
+    * Retorna os comentários de um post
+    * @return Zend\Http\Response 
+    */
+   public function commentsAction()
+   {
+       $id = (int) $this->params()->fromRoute('id', 0);
+       $where = array('post_id' => $id);
+       $comments = $this->getTable('Application\Model\Comment')
+                           ->fetchAll(null, $where)
+                           ->toArray();
+       $result = new ViewModel(array(
+           'comments' => $comments
+           )
+       );
+       $result->setTerminal(true);
+       return $result;
+   }
 }
