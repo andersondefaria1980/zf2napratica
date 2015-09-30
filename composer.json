@@ -7,11 +7,12 @@
         "zf2"
     ],
     "homepage": "http://framework.zend.com/",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.2.6",
+        "zendframework/zendframework": "2.*",
         "phpunit/phpunit": "4.7.*",
-        "symfony/serializer": "*"
-
+        "symfony/serializer": "*",
+        "doctrine/doctrine-orm-module": "dev-master"
     }
 }

@@ -59,4 +59,12 @@ return array(
             'Serializer'
         ),
     ),
+    'doctrine' => array(
+    'connection' => array(
+      'driver'   => 'pdo_mysql',
+      'host'     => 'localhost',
+      'port'     => '3306',
+      'dbname'   => 'zf2napratica'
+    )
+  ),
 );
