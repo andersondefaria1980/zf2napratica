@@ -7,49 +7,47 @@ use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
 use Core\Model\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Entidade User
  * 
  * @category Admin
  * @package Model
- *
- * @ORM\Entity
- * @ORM\Table(name="users")
  */
 class User extends Entity
 {
+    /**
+     * Nome da tabela. Campo obrigatório
+     * @var string
+     */
+    protected $tableName ='users';
 
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer");
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @var int
      */
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @var string
      */
     protected $username;
 
     /**
-     * @ORM\Column(type="string")
+     * @var string
      */
     protected $password;
 
     /**
-     * @ORM\Column(type="string")
+     * @var string
      */
     protected $name;
 
     /**
-     * @ORM\Column(type="integer");
+     * @var int
      */
     protected $valid;
 
     /**
-     * @ORM\Column(type="string")
+     * @var string
      */
     protected $role;
 

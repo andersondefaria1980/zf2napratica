@@ -1,4 +1,5 @@
 <?php
+namespace Admin;
 
 // module/Admin/conﬁg/module.config.php:
 return array(
@@ -9,7 +10,12 @@ return array(
 
         ),
     ),
-
+    'doctrine' => array(
+        'driver' => array(
+            'cache' => 'Doctrine\Common\Cache\ArrayCache',
+            'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Model')
+          ),
+    ),
     'router' => array(
         'routes' => array(
             'admin' => array(
@@ -97,7 +103,34 @@ return array(
                 );
 
                 return $cache;
-            }
+            },
+            'Doctrine\ORM\EntityManager' => function($sm) {
+                $config = $sm->get('Configuration');
+                //$config = $sm->get('Config'); mesma coisa
+                
+                $doctrineConfig = new \Doctrine\ORM\Configuration();
+                $cache = new $config['doctrine']['driver']['cache'];
+                $doctrineConfig->setQueryCacheImpl($cache);
+                $doctrineConfig->setProxyDir('/tmp');
+                $doctrineConfig->setProxyNamespace('EntityProxy');
+                $doctrineConfig->setAutoGenerateProxyClasses(true);
+                
+                $driver = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver(
+                    new \Doctrine\Common\Annotations\AnnotationReader(),
+                    array($config['doctrine']['driver']['paths'])
+                );
+                $doctrineConfig->setMetadataDriverImpl($driver);
+                $doctrineConfig->setMetadataCacheImpl($cache);
+                \Doctrine\Common\Annotations\AnnotationRegistry::registerFile(
+                    getenv('PROJECT_ROOT'). '/vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php'
+                );
+                $em = \Doctrine\ORM\EntityManager::create(
+                    $config['doctrine']['connection'],
+                    $doctrineConfig
+                );
+                return $em;
+
+            },
         )    
     ),
                 
